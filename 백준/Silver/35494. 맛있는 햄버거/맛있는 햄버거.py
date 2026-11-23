@@ -2,13 +2,15 @@ N = int(input())
 
 ingres = list(map(int, input().split()))
 
+s = ingres[0]
+m = ingres[0]
+
 for i in range(1, N):
-    if ingres[i] < ingres[i-1]:
-        ingres[i] = ingres[i-1]
+    if ingres[i] > m:
+        m = ingres[i]
+    s += m
 
-V = sum(ingres)
-
-if V % 3 == 0:
+if s % 3 == 0:
     print("Delicious!")
 else:
     print("Oh My God!")
